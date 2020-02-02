@@ -39,12 +39,8 @@ call vundle#end()
 
 filetype plugin indent on
 
-if &term =~ '256color'
-  " disable Background Color Erase (BCE) so that color schemes
-  " render properly when inside 256-color tmux and GNU screen.
-  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
-  set t_ut=
-endif
+" Disable Background Color Erase (BCE) so that color schemes render properly.
+set t_ut=
 
 " Miscellaneous settings
 set history=50		" keep 50 lines of command line history
