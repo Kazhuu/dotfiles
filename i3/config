@@ -188,6 +188,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 for_window [class="Spotify"] move to workspace $ws8
 
 # Open specific applications in floating mode
+for_window [class="KeePassXC"] floating enable
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
