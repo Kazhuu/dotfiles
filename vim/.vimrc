@@ -35,6 +35,7 @@ Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'arthurxavierx/vim-caser'
+Plugin 'petRUShka/vim-opencl'
 call vundle#end()
 
 filetype plugin indent on
