@@ -29,7 +29,6 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rbenv'
 Plugin 'tpope/vim-bundler'
-Plugin 'ngmy/vim-rubocop'
 Plugin 'prettier/vim-prettier'
 Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'tpope/vim-surround'
@@ -139,6 +138,8 @@ let g:syntastic_vhdl_checkers = ['vimhdl']
 " Eslint from local installation.
 let g:syntastic_javascript_eslint_exec = "./node_modules/.bin/eslint"
 let g:syntastic_javascript_checkers = ['eslint']
+" Ruby checkers
+let g:syntastic_ruby_checkers = ['rubocop']
 
 " NERDTree settings
 " Automatically open tree on start up
