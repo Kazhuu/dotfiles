@@ -35,6 +35,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'arthurxavierx/vim-caser'
 Plugin 'petRUShka/vim-opencl'
+Plugin 'rhysd/vim-llvm'
 call vundle#end()
 
 filetype plugin indent on
@@ -218,3 +219,8 @@ let g:indent_guides_guide_size = 1
 
 " vimhdl project config file.
 let g:vimhdl_conf_file = 'vimhdl.prj'
+
+" vim-llvm settings:
+" Disable extra features added on top of llvm stuff like key mappings.
+let g:llvm_extends_official = 0
+nnoremap <silent><leader>v :<C-u>call <SID>goto_definition()<CR>
