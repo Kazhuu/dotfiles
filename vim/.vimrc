@@ -221,6 +221,7 @@ let g:indent_guides_guide_size = 1
 let g:vimhdl_conf_file = 'vimhdl.prj'
 
 " vim-llvm settings:
-" Disable extra features added on top of llvm stuff like key mappings.
-let g:llvm_extends_official = 0
-nnoremap <silent><leader>v :<C-u>call <SID>goto_definition()<CR>
+" Disable default key bindings.
+let g:llvm_ext_no_mapping = 1
+" Define own go to definition for LLVM IR instructions.
+autocmd FileType llvm nmap <buffer><silent>gd <Plug>(llvm-goto-definition)
