@@ -188,9 +188,9 @@ nnoremap <leader>p :tabm -1<CR>
 " Go to definition related mappings.
 nnoremap <leader>g <C-]>
 
-" Generate tags for current Python project.
-nnoremap <leader>tp :! ctags -R --fields=+l --languages=python --python-kinds=-iv -f .tags ./<CR>
-nnoremap <leader>tr :! ctags -R --languages=ruby --exclude=.git --exclude=log -f .tags ./<CR>
+" Generate tags.
+nnoremap <leader>tp :! ctags -R --fields=+l --languages=python --python-kinds=-iv ./<CR>
+nnoremap <leader>tr :! ctags -R --languages=ruby --exclude=.git --exclude=log ./<CR>
 
 " FZF to runtime path
 set rtp+=~/.fzf
