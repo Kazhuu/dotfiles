@@ -121,6 +121,8 @@ let g:syntastic_vhdl_checkers = ['vimhdl']
 " Eslint from local installation.
 let g:syntastic_javascript_eslint_exec = "./node_modules/.bin/eslint"
 let g:syntastic_javascript_checkers = ['eslint']
+" Ruby checkers
+let g:syntastic_ruby_checkers = ['rubocop']
 
 " NERDTree settings
 " Automatically open tree on start up
@@ -168,9 +170,9 @@ nnoremap <leader>p :tabm -1<CR>
 " Go to definition related mappings.
 nnoremap <leader>g <C-]>
 
-" Generate tags for current Python project.
-nnoremap <leader>tp :! ctags -R --fields=+l --languages=python --python-kinds=-iv -f .tags ./<CR>
-nnoremap <leader>tr :! ctags -R --languages=ruby --exclude=.git --exclude=log -f .tags ./<CR>
+" Generate tags.
+nnoremap <leader>tp :! ctags -R --fields=+l --languages=python --python-kinds=-iv ./<CR>
+nnoremap <leader>tr :! ctags -R --languages=ruby --exclude=.git --exclude=log ./<CR>
 
 " FZF to runtime path
 set rtp+=~/.fzf
@@ -240,3 +242,9 @@ nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
 
 " vimhdl project config file.
 let g:vimhdl_conf_file = 'vimhdl.prj'
+
+" vim-llvm settings:
+" Disable default key bindings.
+let g:llvm_ext_no_mapping = 1
+" Define own go to definition for LLVM IR instructions.
+autocmd FileType llvm nmap <buffer><silent>gd <Plug>(llvm-goto-definition)
