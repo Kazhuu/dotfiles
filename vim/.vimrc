@@ -1,44 +1,36 @@
-set nocompatible
-filetype off
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'bitc/vim-bad-whitespace'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'jnurmine/Zenburn'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'mzlogin/vim-markdown-toc'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'JamshedVesuna/vim-markdown-preview'
-Plugin 'junegunn/fzf.vim'
-Plugin 'suoto/vim-hdl'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rbenv'
-Plugin 'tpope/vim-bundler'
-Plugin 'ngmy/vim-rubocop'
-Plugin 'prettier/vim-prettier'
-Plugin 'xuhdev/vim-latex-live-preview'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-scripts/DoxygenToolkit.vim'
-Plugin 'arthurxavierx/vim-caser'
-Plugin 'petRUShka/vim-opencl'
-call vundle#end()
-
-filetype plugin indent on
+call plug#begin()
+Plug 'VundleVim/Vundle.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'airblade/vim-gitgutter'
+Plug 'tmhedberg/SimpylFold'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'bitc/vim-bad-whitespace'
+Plug 'vim-syntastic/syntastic'
+Plug 'jnurmine/Zenburn'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'mzlogin/vim-markdown-toc'
+Plug 'scrooloose/nerdcommenter'
+Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'junegunn/fzf.vim'
+Plug 'suoto/vim-hdl'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rbenv'
+Plug 'tpope/vim-bundler'
+Plug 'ngmy/vim-rubocop'
+Plug 'prettier/vim-prettier'
+Plug 'xuhdev/vim-latex-live-preview'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'arthurxavierx/vim-caser'
+Plug 'petRUShka/vim-opencl'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
 
 " Disable Background Color Erase (BCE) so that color schemes render properly.
 set t_ut=
@@ -59,7 +51,6 @@ set backspace=indent,eol,start
 set textwidth=0     " set no text width
 set scrolloff=9999  " keep cursor on the middle all the time
 set relativenumber  " Put on relative numbers.
-syntax on           " syntax always on
 set ignorecase      " do case-insensitive searches
 set smartcase       " do case-sensitive search when capital letters are typed
 set wildmode=full   " complete to next full match.
@@ -101,15 +92,6 @@ set noexpandtab
 
 " Enable powerline fonts for airline status bar.
 let g:airline_powerline_fonts = 1
-
-" YouCompleteMe configuration
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
-let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
-let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-let g:ycm_complete_in_comments = 1 " Completion in comments
-let g:ycm_complete_in_strings = 1 " Completion in string
-let g:ycm_global_ycm_extra_conf = '.ycm_extra_conf.py' " Extra configuration if provided on project basis.
 
 " Prettier configuration.
 " Single quotes over double quotes.
@@ -214,6 +196,47 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=238
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=238
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
+
+" Coc related settings.
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+set signcolumn=yes
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+" Show all diagnostics.
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
 
 " vimhdl project config file.
 let g:vimhdl_conf_file = 'vimhdl.prj'
