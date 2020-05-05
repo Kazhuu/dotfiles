@@ -30,6 +30,7 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'arthurxavierx/vim-caser'
 Plug 'petRUShka/vim-opencl'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 
 " Disable Background Color Erase (BCE) so that color schemes render properly.
@@ -114,7 +115,7 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_loc_list_height = 3
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_vhdl_checkers = ['vimhdl']
@@ -248,3 +249,7 @@ let g:vimhdl_conf_file = 'vimhdl.prj'
 let g:llvm_ext_no_mapping = 1
 " Define own go to definition for LLVM IR instructions.
 autocmd FileType llvm nmap <buffer><silent>gd <Plug>(llvm-goto-definition)
+
+" Don't show braces inside of square brackets as an error.
+" https://github.com/vim-jp/vim-cpp/issues/16
+let c_no_curly_error = 1
