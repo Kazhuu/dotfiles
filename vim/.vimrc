@@ -22,7 +22,6 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-bundler'
-Plug 'ngmy/vim-rubocop'
 Plug 'prettier/vim-prettier'
 Plug 'xuhdev/vim-latex-live-preview'
 Plug 'tpope/vim-surround'
@@ -122,8 +121,6 @@ let g:syntastic_vhdl_checkers = ['vimhdl']
 " Eslint from local installation.
 let g:syntastic_javascript_eslint_exec = "./node_modules/.bin/eslint"
 let g:syntastic_javascript_checkers = ['eslint']
-" Ruby checkers
-let g:syntastic_ruby_checkers = ['rubocop']
 
 " NERDTree settings
 " Automatically open tree on start up
@@ -239,7 +236,7 @@ nmap <silent> gr <Plug>(coc-references)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 " Show all diagnostics.
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <space>s  :<C-u>CocList diagnostics<cr>
 
 " vimhdl project config file.
 let g:vimhdl_conf_file = 'vimhdl.prj'

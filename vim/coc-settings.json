@@ -1,0 +1,6 @@
+{
+	// Ruby LSP server Solargraph settings.
+	"solargraph.diagnostics": true,
+	"solargraph.completion": true,
+	"solargraph.hover": true
+}

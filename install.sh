@@ -2,6 +2,7 @@
 mkdir -p ~/.vim
 ln -s ~/dotfiles/vim/.vimrc ~/
 ln -s ~/dotfiles/vim/ftplugin ~/.vim
+ln -s ~/dotfiles/vim/coc-settings.json ~/.vim/
 
 # Kitty
 mkdir -p ~/.config/kitty
