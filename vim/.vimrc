@@ -30,6 +30,7 @@ Plug 'arthurxavierx/vim-caser'
 Plug 'petRUShka/vim-opencl'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'flatcap/vim-local'
 call plug#end()
 
 " Disable Background Color Erase (BCE) so that color schemes render properly.
@@ -172,6 +173,9 @@ nnoremap <leader>g <C-]>
 nnoremap <leader>tp :! ctags -R --fields=+l --languages=python --python-kinds=-iv ./<CR>
 nnoremap <leader>tr :! ctags -R --languages=ruby --exclude=.git --exclude=log ./<CR>
 
+" Copy current file path to register.
+nmap cp :let @" = expand("%")<CR>
+
 " FZF to runtime path
 set rtp+=~/.fzf
 
@@ -250,3 +254,9 @@ autocmd FileType llvm nmap <buffer><silent>gd <Plug>(llvm-goto-definition)
 " Don't show braces inside of square brackets as an error.
 " https://github.com/vim-jp/vim-cpp/issues/16
 let c_no_curly_error = 1
+
+" Vimlocal settings.
+" Autoload local configuration file because it's not done by default.
+autocmd BufNewFile,BufRead * call LoadVimLocal()
+" Don't descent too many parent directories.
+let g:vimlocal_max_depth = 5
