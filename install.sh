@@ -14,3 +14,6 @@ ln -s ~/dotfiles/i3/config ~/.i3/
 
 # ruby
 ln -s ~/dotfiles/ruby/.pryrc ~/
+
+# gdb
+ln -s ~/dotfiles/gdb/.gdbinit ~/
