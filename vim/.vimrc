@@ -240,7 +240,11 @@ nmap <silent> gr <Plug>(coc-references)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 " Show all diagnostics.
-nnoremap <silent> <space>s  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <space>s :<C-u>CocList diagnostics<cr>
+
+" Coc-clangd settings.
+" Switch between header and source files.
+nnoremap <silent> gs :<C-u>CocCommand clangd.switchSourceHeader<cr>
 
 " vimhdl project config file.
 let g:vimhdl_conf_file = 'vimhdl.prj'
