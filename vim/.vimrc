@@ -75,9 +75,6 @@ cnoremap <c-n> <down>
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
 
-" Use system clipboard instead of + and * registers
-set clipboard=unnamedplus
-
 " Remap <leader> key space. Defaults to backslash '\'
 map <space> <leader>
 
