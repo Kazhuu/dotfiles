@@ -1,6 +1,18 @@
 {
-	// Ruby LSP server Solargraph settings.
-	"solargraph.diagnostics": true,
-	"solargraph.completion": true,
-	"solargraph.hover": true
+    "languageserver": {
+        "cmake": {
+            "command": "cmake-language-server",
+            "filetypes": ["cmake"],
+            "rootPatterns": [
+                "build/"
+            ],
+            "initializationOptions": {
+                "buildDirectory": "build"
+            }
+        }
+    },
+    // Ruby LSP server Solargraph settings.
+    "solargraph.diagnostics": true,
+    "solargraph.completion": true,
+    "solargraph.hover": true
 }
