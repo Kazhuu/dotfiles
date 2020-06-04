@@ -84,9 +84,11 @@ colors zenburn
 hi TabLineSel ctermbg=8
 
 " Default indentation config
-set tabstop=4
-set shiftwidth=4
-set noexpandtab
+setlocal tabstop=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
+setlocal expandtab
+setlocal autoindent
 
 " Enable powerline fonts for airline status bar.
 let g:airline_powerline_fonts = 1
@@ -169,6 +171,7 @@ nnoremap <leader>g <C-]>
 " Generate tags.
 nnoremap <leader>tp :! ctags -R --fields=+l --languages=python --python-kinds=-iv ./<CR>
 nnoremap <leader>tr :! ctags -R --languages=ruby --exclude=.git --exclude=log ./<CR>
+nnoremap <leader>tc :! ctags -R --c++-kinds=+p --fields=+iaS --extras=+q ./<CR>
 
 " Copy current file path to register.
 nmap cp :let @" = expand("%")<CR>
@@ -209,7 +212,6 @@ set shortmess+=c
 set signcolumn=yes
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
