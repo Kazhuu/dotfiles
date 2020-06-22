@@ -31,6 +31,7 @@ Plug 'petRUShka/vim-opencl'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'flatcap/vim-local'
+Plug 'rhysd/vim-llvm'
 call plug#end()
 
 " Disable Background Color Erase (BCE) so that color schemes render properly.
@@ -243,7 +244,7 @@ nnoremap <silent> <space>s :<C-u>CocList diagnostics<cr>
 
 " Coc-clangd settings.
 " Switch between header and source files.
-nnoremap <silent> gs :<C-u>CocCommand clangd.switchSourceHeader<cr>
+nnoremap <silent> <leader>qs :<C-u>CocCommand clangd.switchSourceHeader<cr>
 
 " vimhdl project config file.
 let g:vimhdl_conf_file = 'vimhdl.prj'
