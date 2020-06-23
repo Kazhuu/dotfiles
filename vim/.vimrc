@@ -136,7 +136,7 @@ let NERDTreeMinimalUI=1
 " NERDTree toggle
 noremap <C-n> :NERDTreeToggle<CR>
 " Ingonore files in NERDTree
-let NERDTreeIgnore=['\.pyc$', '\~$', '\.ko$', '\.o$', '\.so$', '\.mod\.c$', '\.order$', '\.symvers$', '^__pycache__$', '^node_modules$']
+let NERDTreeIgnore=['\.pyc$', '\~$', '\.ko$', '\.o$', '\.so$', '\.mod\.c$', '\.order$', '\.symvers$', '^__pycache__$', '^node_modules$', '^build$']
 
 " Split navigations
 nmap gh <C-w>h
@@ -184,7 +184,7 @@ set rtp+=~/.fzf
 nnoremap <C-F> :Ag<CR>
 " Paste word under cursor and use Ag to search all files in current directory
 nnoremap <leader>f :Ag <C-R><C-W><CR>
-nnoremap <C-P> :Files<CR>
+nnoremap <C-P> :GFiles<CR>
 " Enable per-command history.
 " CTRL-N and CTRL-P will be automatically bound to next-history and
 " previous-history.
