@@ -158,6 +158,8 @@ xmap K 8k
 
 " Tab related mappings
 nnoremap <leader>a :tabnew<CR>
+" Duplicate current file to new tab.
+nnoremap <leader>A :tabnew %<CR>
 nnoremap <leader>x :tabclose<CR>
 nnoremap <leader>h :tabfirst<CR>
 nnoremap <leader>k :tabnext<CR>
