@@ -275,7 +275,7 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id dropbox
 exec --no-startup-id caffeine
-exec --no-startup-id ~/dotfiles/spotify/skip-live.sh
+exec --no-startup-id ~/dotfiles/spotify/skip-live-and-commentary.sh
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
