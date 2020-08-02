@@ -1,0 +1,3 @@
+# Split source and gdb windows vertically instead of horizontally.
+# Source window on the left side and gdb on the right side.
+set winsplitorientation=vertical

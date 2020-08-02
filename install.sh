@@ -17,3 +17,7 @@ ln -s ~/dotfiles/ruby/.pryrc ~/
 
 # gdb
 ln -s ~/dotfiles/gdb/.gdbinit ~/
+
+# cgdb
+mkdir -p ~/.cgdb/
+ln -s ~/dotfiles/cgdb/cgdbrc ~/.cgdb/
