@@ -3,9 +3,7 @@
         "cmake": {
             "command": "cmake-language-server",
             "filetypes": ["cmake"],
-            "rootPatterns": [
-                "build/"
-            ],
+            "rootPatterns": ["build/"],
             "initializationOptions": {
                 "buildDirectory": "build"
             }
@@ -13,6 +11,7 @@
     },
     // Ruby LSP server Solargraph settings.
     "solargraph.diagnostics": true,
+    "solargraph.useBundler": true,
     "solargraph.completion": true,
     "solargraph.hover": true
 }
