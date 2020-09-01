@@ -9,7 +9,7 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'bitc/vim-bad-whitespace'
 Plug 'vim-syntastic/syntastic'
 Plug 'jnurmine/Zenburn'
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -61,6 +61,7 @@ set incsearch       " search incrementally.
 set hlsearch        " highlights search
 set cursorline      " highlight current line where cursor is
 set nofoldenable    " disable folding.
+set equalalways     " always equal size splits.
 
 " Vim swap and backup files to home different directory instead
 set backupdir=~/vimtmp,.
@@ -123,20 +124,36 @@ let g:syntastic_vhdl_checkers = ['vimhdl']
 let g:syntastic_javascript_eslint_exec = "./node_modules/.bin/eslint"
 let g:syntastic_javascript_checkers = ['eslint']
 
+" netrw file explorer settings.
+" Open netrw at root of the project.
+noremap <C-n> :e.<CR>
+" Open netrw from current buffer folder.
+noremap <C-m> :Explore<CR>
+
+" Override netrw buffer keybindings with my own.
+" https://vi.stackexchange.com/questions/5531/how-to-remap-i-in-netrw
+augroup netrw_mapping
+    autocmd!
+    autocmd filetype netrw call NetrwMapping()
+augroup END
+
+" My own netrw buffer keybindings here.
+function! NetrwMapping()
+    nmap <buffer> gh <C-w>h
+endfunction
+
 " NERDTree settings
-" Automatically open tree on start up
-" autocmd vimenter * NERDTree
 " Close vim automatically if tree is only open window
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Automatically open tree when vim with opening a directory
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 " Disable visual clutter.
-let NERDTreeMinimalUI=1
+"let NERDTreeMinimalUI=1
 " NERDTree toggle
-noremap <C-n> :NERDTreeToggle<CR>
+"noremap <C-n> :NERDTreeToggle<CR>
 " Ingonore files in NERDTree
-let NERDTreeIgnore=['\.pyc$', '\~$', '\.ko$', '\.o$', '\.so$', '\.mod\.c$', '\.order$', '\.symvers$', '^__pycache__$', '^node_modules$', '^build$']
+"let NERDTreeIgnore=['\.pyc$', '\~$', '\.ko$', '\.o$', '\.so$', '\.mod\.c$', '\.order$', '\.symvers$', '^__pycache__$', '^node_modules$', '^build$']
 
 " Split navigations
 nmap gh <C-w>h
