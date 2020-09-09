@@ -4,6 +4,6 @@ set confirm off
 # Custom function to run pocl project and delete kernel cache to trigger kernel
 # compilation again.
 define pocl_run
-    shell rm -rf ~/kcache
+    shell rm -rf $POCL_CACHE_DIR
     run
 end
