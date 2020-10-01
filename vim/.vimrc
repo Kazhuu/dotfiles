@@ -16,6 +16,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'scrooloose/nerdcommenter'
 Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'suoto/vim-hdl'
 Plug 'vim-ruby/vim-ruby'
