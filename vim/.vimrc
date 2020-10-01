@@ -1,5 +1,4 @@
 call plug#begin()
-Plug 'VundleVim/Vundle.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -9,7 +8,6 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'bitc/vim-bad-whitespace'
 Plug 'vim-syntastic/syntastic'
 Plug 'jnurmine/Zenburn'
-"Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -52,7 +50,7 @@ set hidden          " allow switch between buffers if not saved
 set spell           " set spell checking
 set backspace=indent,eol,start
 set textwidth=0     " set no text width
-set scrolloff=9999  " keep cursor on the middle all the time
+set scrolloff=50 " keep cursor on the middle all the time
 set relativenumber  " Put on relative numbers.
 set ignorecase      " do case-insensitive searches
 set smartcase       " do case-sensitive search when capital letters are typed
@@ -130,6 +128,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 noremap <C-n> :e.<CR>
 " Open netrw from current buffer folder.
 noremap <C-m> :Explore<CR>
+noremap gq :Rex<CR>
 
 " Override netrw buffer keybindings with my own.
 " https://vi.stackexchange.com/questions/5531/how-to-remap-i-in-netrw
@@ -142,19 +141,6 @@ augroup END
 function! NetrwMapping()
     nmap <buffer> gh <C-w>h
 endfunction
-
-" NERDTree settings
-" Close vim automatically if tree is only open window
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" Automatically open tree when vim with opening a directory
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-" Disable visual clutter.
-"let NERDTreeMinimalUI=1
-" NERDTree toggle
-"noremap <C-n> :NERDTreeToggle<CR>
-" Ingonore files in NERDTree
-"let NERDTreeIgnore=['\.pyc$', '\~$', '\.ko$', '\.o$', '\.so$', '\.mod\.c$', '\.order$', '\.symvers$', '^__pycache__$', '^node_modules$', '^build$']
 
 " Split navigations
 nmap gh <C-w>h
@@ -204,7 +190,7 @@ set rtp+=~/.fzf
 nnoremap <C-F> :Ag<CR>
 " Paste word under cursor and use Ag to search all files in current directory
 nnoremap <leader>f :Ag <C-R><C-W><CR>
-nnoremap <C-P> :GFiles<CR>
+nnoremap <C-P> :Files<CR>
 " Enable per-command history.
 " CTRL-N and CTRL-P will be automatically bound to next-history and
 " previous-history.
