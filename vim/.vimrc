@@ -51,7 +51,7 @@ set spell           " set spell checking
 set backspace=indent,eol,start
 set textwidth=0     " set no text width
 set scrolloff=50 " keep cursor on the middle all the time
-set relativenumber  " Put on relative numbers.
+"set relativenumber  " Put on relative numbers.
 set ignorecase      " do case-insensitive searches
 set smartcase       " do case-sensitive search when capital letters are typed
 set wildmode=full   " complete to next full match.
@@ -128,7 +128,6 @@ let g:syntastic_javascript_checkers = ['eslint']
 noremap <C-n> :e.<CR>
 " Open netrw from current buffer folder.
 noremap <C-m> :Explore<CR>
-noremap gq :Rex<CR>
 
 " Override netrw buffer keybindings with my own.
 " https://vi.stackexchange.com/questions/5531/how-to-remap-i-in-netrw
@@ -181,7 +180,7 @@ nnoremap <leader>tr :! ctags -R --languages=ruby --exclude=.git --exclude=log ./
 nnoremap <leader>tc :! ctags -R --c++-kinds=+p --fields=+iaS --extras=+q ./<CR>
 
 " Copy current file path to register.
-nmap cp :let @" = expand("%")<CR>
+nmap cp :let @+ = expand("%")<CR>
 
 " FZF to runtime path
 set rtp+=~/.fzf
@@ -268,5 +267,7 @@ let c_no_curly_error = 1
 " Vimlocal settings.
 " Autoload local configuration file because it's not done by default.
 autocmd BufNewFile,BufRead * call LoadVimLocal()
+" Name of the file to read.
+let g:vimlocal_file = '.vimlocal'
 " Don't descent too many parent directories.
 let g:vimlocal_max_depth = 5
