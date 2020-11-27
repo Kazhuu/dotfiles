@@ -29,6 +29,7 @@ Plug 'arthurxavierx/vim-caser'
 Plug 'petRUShka/vim-opencl'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'rhysd/vim-clang-format'
 Plug 'flatcap/vim-local'
 Plug 'rhysd/vim-llvm'
 call plug#end()
