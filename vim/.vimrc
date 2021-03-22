@@ -16,7 +16,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'suoto/vim-hdl'
+"Plug 'suoto/vim-hdl'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rbenv'
