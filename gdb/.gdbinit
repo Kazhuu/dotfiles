@@ -9,3 +9,6 @@ define pocl_run
     shell rm -rf $POCL_CACHE_DIR
     run
 end
+
+source ~/.local/bin/gdb_asm2cfg.py
+#source ~/programming/asm2cfg/src/gdb_asm2cfg.py

@@ -32,6 +32,10 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rhysd/vim-clang-format'
 Plug 'flatcap/vim-local'
 Plug 'rhysd/vim-llvm'
+" Web development support.
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 " Disable Background Color Erase (BCE) so that color schemes render properly.
@@ -186,6 +190,8 @@ nmap cp :let @+ = expand("%")<CR>
 " FZF to runtime path
 set rtp+=~/.fzf
 
+" Make fzf to respect gitignore.
+let $FZF_DEFAULT_COMMAND = 'fd --type f'
 " FZF.vim command shortcuts
 nnoremap <C-F> :Ag<CR>
 " Paste word under cursor and use Ag to search all files in current directory
@@ -272,3 +278,6 @@ autocmd BufNewFile,BufRead * call LoadVimLocal()
 let g:vimlocal_file = '.vimlocal'
 " Don't descent too many parent directories.
 let g:vimlocal_max_depth = 5
+
+" Latex preview settings.
+let g:livepreview_engine = 'xelatex'
