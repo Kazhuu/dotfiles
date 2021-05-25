@@ -21,7 +21,3 @@ ln -s ~/dotfiles/gdb/.gdbinit ~/
 # cgdb
 mkdir -p ~/.cgdb/
 ln -s ~/dotfiles/cgdb/cgdbrc ~/.cgdb/
-
-# vimb
-mkdir -p ~/.config/vimb
-ln -s ~/dotfiles/vimb/config ~/.config/vimb/
