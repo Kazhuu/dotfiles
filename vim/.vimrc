@@ -36,6 +36,8 @@ Plug 'rhysd/vim-llvm'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mattn/emmet-vim'
+" Editorconfig support.
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 " Disable Background Color Erase (BCE) so that color schemes render properly.
@@ -109,9 +111,10 @@ let g:prettier#config#trailing_comma = 'none'
 " Let file override configuration settings. This is needed if project has
 " .editorconfig file and this is not set, then prettier settings are ignored.
 let g:prettier#config#config_precedence = 'file-override'
-" Disable autoformat with @format tag and format on buffer save.
+" Disable autoformat with @format tag.
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml PrettierAsync
+" Format on buffer write.
+"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml PrettierAsync
 
 " Syntastics settings
 set statusline+=%#warningmsg#
