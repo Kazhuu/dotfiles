@@ -21,7 +21,6 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-bundler'
-Plug 'prettier/vim-prettier'
 Plug 'xuhdev/vim-latex-live-preview'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/DoxygenToolkit.vim'
@@ -32,13 +31,18 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rhysd/vim-clang-format'
 Plug 'flatcap/vim-local'
 Plug 'rhysd/vim-llvm'
-" Web development support.
+ "Web development support.
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mattn/emmet-vim'
 " Editorconfig support.
 Plug 'editorconfig/editorconfig-vim'
+" Coffee support.
+Plug 'kchmck/vim-coffee-script'
 call plug#end()
+
+" Automatically installed CoC extensions.
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-tsserver', 'coc-solargraph', 'coc-html', 'coc-prettier']
 
 " Disable Background Color Erase (BCE) so that color schemes render properly.
 set t_ut=
@@ -100,21 +104,6 @@ setlocal autoindent
 
 " Enable powerline fonts for airline status bar.
 let g:airline_powerline_fonts = 1
-
-" Prettier configuration.
-" Single quotes over double quotes.
-let g:prettier#config#single_quote = 'true'
-" Print spaces between brackets.
-let g:prettier#config#bracket_spacing = 'true'
-" Disable trailing commas.
-let g:prettier#config#trailing_comma = 'none'
-" Let file override configuration settings. This is needed if project has
-" .editorconfig file and this is not set, then prettier settings are ignored.
-let g:prettier#config#config_precedence = 'file-override'
-" Disable autoformat with @format tag.
-let g:prettier#autoformat = 0
-" Format on buffer write.
-"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml PrettierAsync
 
 " Syntastics settings
 set statusline+=%#warningmsg#
@@ -183,12 +172,17 @@ nnoremap <leader>p :tabm -1<CR>
 nnoremap <leader>g <C-]>
 
 " Generate tags.
-nnoremap <leader>tp :! ctags -R --fields=+l --languages=python --python-kinds=-iv ./<CR>
-nnoremap <leader>tr :! ctags -R --languages=ruby --exclude=.git --exclude=log ./<CR>
-nnoremap <leader>tc :! ctags -R --c++-kinds=+p --fields=+iaS --extras=+q ./<CR>
+nnoremap <leader>tp :! uctags -R --fields=+l --languages=python --python-kinds=-iv ./<CR>
+nnoremap <leader>tr :! uctags -R --languages=ruby --exclude=.git --exclude=log ./<CR>
+nnoremap <leader>tc :! uctags -R --c++-kinds=+p --fields=+iaS --extras=+q ./<CR>
 
-" Copy current file path to register.
+" Copy current file path to + register.
 nmap cp :let @+ = expand("%")<CR>
+" Copy current file path and line number to + register.
+nmap <leader>cp :let @+ = 'rails test ' . join([expand('%'), line(".")], ':')<CR>
+
+" CoC prettier settings.
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " FZF to runtime path
 set rtp+=~/.fzf

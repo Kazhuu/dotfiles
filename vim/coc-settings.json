@@ -9,9 +9,16 @@
             }
         }
     },
-    // Ruby LSP server Solargraph settings.
+    // Ruby LSP Solargraph settings.
     "solargraph.diagnostics": true,
     "solargraph.useBundler": false,
     "solargraph.completion": true,
-    "solargraph.hover": true
+    "solargraph.hover": true,
+
+    // TypeScript LSP settings.
+    // https://github.com/neoclide/coc-tsserver.
+    "tsserver.npm": "/usr/bin/npm",
+    "typescript.autoClosingTags": true,
+    // CoC-prettier settings.
+    "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact"]
 }
