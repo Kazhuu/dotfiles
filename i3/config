@@ -427,5 +427,5 @@ exec --no-startup-id ~/.screenlayout/default.sh
 
 # Change display layouts with keys. Nitrogen command used to resize
 # current wallpaper to correct size after layout change.
-bindsym $mod+m exec ~/.screenlayout/default.sh & nitrogen --restore
-bindsym $mod+n exec ~/.screenlayout/screen.sh & nitrogen --restore
+bindsym $mod+m exec ~/.screenlayout/default.sh
+bindsym $mod+n exec ~/.screenlayout/screen.sh
