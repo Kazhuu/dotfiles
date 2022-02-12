@@ -10,5 +10,5 @@ define pocl_run
     run
 end
 
-source ~/.local/bin/gdb_asm2cfg.py
-#source ~/programming/asm2cfg/src/gdb_asm2cfg.py
+#source ~/.local/bin/gdb_asm2cfg.py
+source ~/programming/asm2cfg/src/gdb_asm2cfg.py

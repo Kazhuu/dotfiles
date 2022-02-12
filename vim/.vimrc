@@ -180,6 +180,7 @@ nnoremap <leader>tc :! uctags -R --c++-kinds=+p --fields=+iaS --extras=+q ./<CR>
 nmap cp :let @+ = expand("%")<CR>
 " Copy current file path and line number to + register.
 nmap <leader>cp :let @+ = 'rails test ' . join([expand('%'), line(".")], ':')<CR>
+nmap <leader>rcp :let @+ = 'bundle exec rspec ' . join([expand('%'), line(".")], ':')<CR>
 
 " CoC prettier settings.
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
