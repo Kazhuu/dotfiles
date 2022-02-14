@@ -1,0 +1,2 @@
+setxkbmap -layout "fi" -variant "nodeadkeys"
+export TERMINAL=kitty
