@@ -8,6 +8,7 @@ ln -s ~/dotfiles/locale/locale.conf ~/.config/
 
 # Git
 ln -s ~/dotfiles/git/.gitconfig ~/
+ln -s ~/dotfiles/git/.gitignore ~/
 
 # Vim
 mkdir -p ~/.vim
@@ -22,6 +23,9 @@ ln -s ~/dotfiles/neovim/init.vim ~/.config/nvim/
 # Kitty
 mkdir -p ~/.config/kitty
 ln -s ~/dotfiles/kitty/kitty.conf ~/.config/kitty/
+
+# zsh
+ln -s ~/dotfiles/zsh/.zprofile ~/
 
 # i3
 mkdir -p ~/.i3
