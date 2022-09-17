@@ -39,10 +39,15 @@ Plug 'mattn/emmet-vim'
 Plug 'editorconfig/editorconfig-vim'
 " Coffee support.
 Plug 'kchmck/vim-coffee-script'
+" Rust support.
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
+syntax enable
+filetype plugin indent on
+
 " Automatically installed CoC extensions.
-let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-tsserver', 'coc-solargraph', 'coc-html', 'coc-prettier']
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-tsserver', 'coc-solargraph', 'coc-html', 'coc-prettier', 'coc-rust-analyzer']
 
 " Disable Background Color Erase (BCE) so that color schemes render properly.
 set t_ut=
@@ -279,3 +284,6 @@ let g:vimlocal_max_depth = 5
 
 " Latex preview settings.
 let g:livepreview_engine = 'xelatex'
+
+" Rust configuration.
+let g:rustfmt_autosave = 1

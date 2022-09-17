@@ -1,6 +1,6 @@
 [user]
     name = Mauri Mustonen
-    email = mauri.mustonen@hotmail.com
+    email = mauri_mustonen@hotmail.com
 
 [core]
     pager = delta
@@ -21,3 +21,5 @@
 
 [pull]
     rebase = true
+[init]
+	defaultBranch = main
