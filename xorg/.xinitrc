@@ -35,5 +35,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 # Source .xprofile if exists.
 [ -f ~/.xprofile ] && . ~/.xprofile
 
+# Set Finnish keyboard layout.
+setxkbmap -layout "fi" -variant "nodeadkeys"
+
 # Start programs.
 exec i3

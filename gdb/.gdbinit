@@ -10,5 +10,20 @@ define pocl_run
     run
 end
 
+define m
+    make -j
+    run
+end
+
+define n
+    shell ninja
+    run
+end
+
+define cm
+    shell cmake --build build -j
+    run
+end
+
 source ~/.local/bin/gdb_asm2cfg.py
 #source ~/programming/asm2cfg/src/gdb_asm2cfg.py
