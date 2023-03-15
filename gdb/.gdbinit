@@ -10,17 +10,17 @@ define pocl_run
     run
 end
 
-define m
+define make
     make -j
     run
 end
 
-define n
+define ninja
     shell ninja
     run
 end
 
-define cm
+define cmake
     shell cmake --build build -j
     run
 end
