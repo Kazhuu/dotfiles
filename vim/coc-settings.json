@@ -9,17 +9,21 @@
             }
         }
     },
+    "python": {
+        "linting.mypyEnabled": true,
+        "linting.pylintEnabled": true,
+    },
     // Ruby LSP Solargraph settings.
     "solargraph.diagnostics": true,
-    "solargraph.useBundler": false,
+    "solargraph.useBundler": true,
     "solargraph.completion": true,
     "solargraph.hover": true,
     "solargraph.checkGemVersion": false,
 
     // TypeScript LSP settings.
     // https://github.com/neoclide/coc-tsserver.
-    "tsserver.npm": "/usr/bin/npm",
     "typescript.autoClosingTags": true,
+    "tsserver.log": "verbose",
     // CoC-prettier settings.
     "coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact"]
 }

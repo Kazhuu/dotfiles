@@ -4,9 +4,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'airblade/vim-gitgutter'
 Plug 'tmhedberg/SimpylFold'
-Plug 'vim-scripts/indentpython.vim'
+"Plug 'vim-scripts/indentpython.vim'
 Plug 'bitc/vim-bad-whitespace'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
 Plug 'jnurmine/Zenburn'
 Plug 'tpope/vim-fugitive'
 Plug 'godlygeek/tabular'
@@ -16,7 +16,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-"Plug 'suoto/vim-hdl'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rbenv'
@@ -25,7 +24,7 @@ Plug 'xuhdev/vim-latex-live-preview'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'arthurxavierx/vim-caser'
-Plug 'petRUShka/vim-opencl'
+"Plug 'petRUShka/vim-opencl'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rhysd/vim-clang-format'
@@ -37,10 +36,9 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mattn/emmet-vim'
 " Editorconfig support.
 Plug 'editorconfig/editorconfig-vim'
-" Coffee support.
-Plug 'kchmck/vim-coffee-script'
 " Rust support.
 Plug 'rust-lang/rust.vim'
+Plug 'github/copilot.vim'
 call plug#end()
 
 syntax enable
@@ -111,19 +109,19 @@ setlocal autoindent
 let g:airline_powerline_fonts = 1
 
 " Syntastics settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_loc_list_height = 3
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_vhdl_checkers = ['vimhdl']
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 2
+"let g:syntastic_loc_list_height = 3
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_python_checkers = ['flake8']
+"let g:syntastic_vhdl_checkers = ['vimhdl']
 " Eslint from local installation.
-let g:syntastic_javascript_eslint_exec = "./node_modules/.bin/eslint"
-let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_javascript_eslint_exec = "./node_modules/.bin/eslint"
+"let g:syntastic_javascript_checkers = ['eslint']
 
 " netrw file explorer settings.
 " Open netrw at root of the project.
@@ -206,7 +204,7 @@ nnoremap <C-P> :Files<CR>
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " Markdown preview settings
-let vim_markdown_preview_hotkey='<C-M>'
+"let vim_markdown_preview_hotkey='<C-M>'
 let vim_markdown_preview_github=1
 
 " Indent guides settings
@@ -246,11 +244,20 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 " <C-g>u breaks current undo, please make your own choice
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+nmap <silent> gy :call ShowDocumentation()<CR>
+"nmap <silent> gy <Plug>(coc-type-definition)
+
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 " Apply the most preferred quickfix action to fix diagnostic on the current line
@@ -261,9 +268,6 @@ nnoremap <silent> <space>s :<C-u>CocList diagnostics<cr>
 " Coc-clangd settings.
 " Switch between header and source files.
 nnoremap <silent> <leader>qs :<C-u>CocCommand clangd.switchSourceHeader<cr>
-
-" vimhdl project config file.
-let g:vimhdl_conf_file = 'vimhdl.prj'
 
 " vim-llvm settings:
 " Disable default key bindings.
