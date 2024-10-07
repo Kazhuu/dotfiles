@@ -154,7 +154,7 @@ for_window [class="Spotify"] move to workspace $ws8
 for_window [class="thunderbird"] move to workspace $ws7
 for_window [class="discord"] move to workspace $ws3
 for_window [class="Slack"] move to workspace $ws3
-for_window [title="Microsoft Teams"] move to workspace $ws3
+for_window [class="teams-for-linux"] move to workspace $ws3
 
 # Open specific applications in floating mode
 for_window [class="SpeedCrunch"] floating enable
