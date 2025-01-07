@@ -12,6 +12,10 @@ set $term foot
 # Your preferred application launcher
 set $menu "rofi -show combi -combi-modes 'drun,run,window,ssh' -modes combi"
 
+# SwayFX settings
+corner_radius 5
+default_dim_inactive 0.3
+titlebar_separator disable
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
