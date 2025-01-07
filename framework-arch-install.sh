@@ -15,6 +15,8 @@ ln -s ~/dotfiles/sway/config ~/.config/sway/
 # Waybar
 mkdir -p ~/.config/waybar
 ln -s ~/dotfiles/waybar/config.jsonc ~/.config/waybar/
+ln -s ~/dotfiles/waybar/style.css ~/.config/waybar/
+ln -s ~/dotfiles/waybar/power_menu.xml ~/.config/waybar/
 
 # Foot
 mkdir -p ~/.config/foot
