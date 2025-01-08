@@ -215,7 +215,7 @@ for_window [app_id="org.keepassxc.KeePassXC"] floating enable
 # Open applications on specific workspaces
 for_window [class="vesktop"] move to workspace 3
 for_window [class="Slack"] move to workspace 3
-for_window [class="teams-for-linux"] move to workspace 3
+for_window [app_id="teams-for-linux"] move to workspace 3
 for_window [class="Spotify"] move to workspace 8
 for_window [app_id="thunderbird"] move to workspace 7
 

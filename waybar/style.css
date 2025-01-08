@@ -1,40 +1,48 @@
 * {
     border: none;
     font-family: Font Awesome, Roboto, Arial, sans-serif;
-    font-size: 13px;
-    color: #ffffff;
-    border-radius: 20px;
+    font-size: 15px;
 }
 
 window {
-	/*font-weight: bold;*/
+	font-weight: 500;
 }
+
 window#waybar {
     background: rgba(0, 0, 0, 0);
 }
-/*-----module groups----*/
+
 .modules-right {
-	background-color: rgba(0,43,51,0.85);
-    margin: 2px 10px 2px 0;
+    color: #ffffff;
+    border-radius: 20px;
+	background-color: rgba(0, 43, 51, 0.851);
+    margin: 2px 5px 2px 0;
 }
 .modules-center {
-	background-color: rgba(0,43,51,0.85);
-    margin: 2px 0 2px 2px;
-    padding: 0 10px 0 10px;
+    color: #ffffff;
+    border-radius: 20px;
+	background-color: rgba(0, 43, 51, 0.851);
+    margin: 2px 0;
 }
 .modules-left {
+    color: #ffffff;
+    border-radius: 20px;
     margin: 2px 0 2px 5px;
-    padding: 0 10px 0 0;
-	background-color: rgba(0,119,179,0.6);
+	background-color: rgba(0, 43, 51, 0.851);
 }
-/*-----modules indv----*/
+
 #workspaces button {
+    color: #ffffff;
+    border-radius: 20px;
     padding: 1px 5px;
-    background-color: transparent;
 }
 
 #workspaces button.focused {
-	background-color: rgba(0,43,51,0.85);
+	background-color: rgba(0, 164, 193, 0.851);
+}
+
+#workspaces button.urgent {
+    background-color: rgba(152, 0, 0, 0.851);
 }
 
 #clock,
@@ -43,29 +51,20 @@ window#waybar {
 #memory,
 #temperature,
 #network,
-#pulseaudio,
+#scratchpad
 #custom-media,
 #mode,
-#language,
 #custom-power,
 #custom-menu,
+#language,
 #idle_inhibitor {
     padding: 0 10px;
 }
+#scratchpad,
 #tray {
     padding: 0 10px 0 10px;
 }
-#mode {
-    color: #cc3436;
-    font-weight: bold;
-}
-#custom-power {
-    background-color: rgba(0,119,179,0.6);
-    border-radius: 100px;
-    margin: 5px 5px;
-    padding: 1px 1px 1px 1px;
-}
-/*-----Indicators----*/
+
 #idle_inhibitor.activated {
     color: #2dcc36;
 }
