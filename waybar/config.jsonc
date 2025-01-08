@@ -52,7 +52,7 @@
         "format": "{short} | {flag}"
     },
     "wireplumber": {
-        "format": "{volume}% {icon}",
+        "format": "{volume}% {icon} ",
         "format-muted": "",
         "format-icons": ["", "", ""]
     },
@@ -90,7 +90,7 @@
     },
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
+        "format": "{percent}% {icon} ",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "battery": {
@@ -103,7 +103,7 @@
         "format-full": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format-alt": "{time} {icon} ",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
