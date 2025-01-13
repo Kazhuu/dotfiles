@@ -202,7 +202,7 @@ bindsym --locked XF86AudioPrev exec playerctl previous
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 # Special key to take a screenshot with grim
-bindsym Print exec grim
+bindsym Print exec grim Pictures/$(date +'%s_grim.png')
 # Toggle control center
 bindsym $mod+Shift+n exec swaync-client -t -sw
 bindsym $mod+0 exec wlogout
