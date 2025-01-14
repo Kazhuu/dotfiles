@@ -18,6 +18,10 @@ ln -s ~/dotfiles/waybar/config.jsonc ~/.config/waybar/
 ln -s ~/dotfiles/waybar/style.css ~/.config/waybar/
 ln -s ~/dotfiles/waybar/power_menu.xml ~/.config/waybar/
 
+# Way-displays
+mkdir -p ~/.config/way-displays
+ln -s ~/dotfiles/way-displays/cfg.yaml ~/.config/way-displays/
+
 # Foot
 mkdir -p ~/.config/foot
 ln -s ~/dotfiles/foot/foot.ini ~/.config/foot/
