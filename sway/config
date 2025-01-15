@@ -135,6 +135,18 @@ bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 
+# Move workspace between outputs
+bindsym $mod+Control+Shift+$right move workspace to output right
+bindsym $mod+Control+Shift+$left move workspace to output left
+bindsym $mod+Control+Shift+$down move workspace to output down
+bindsym $mod+Control+Shift+$up move workspace to output up
+# Ditto, with arrow keys
+bindsym $mod+Control+Shift+Right move workspace to output right
+bindsym $mod+Control+Shift+Left move workspace to output left
+bindsym $mod+Control+Shift+Down move workspace to output down
+bindsym $mod+Control+Shift+Up move workspace to output up
+
+
 # You can "split" the current object of your focus with
 # $mod+b or $mod+v, for horizontal and vertical splits
 # respectively.

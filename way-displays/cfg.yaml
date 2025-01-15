@@ -15,7 +15,7 @@ ALIGN: TOP
 # The default ORDER is simply the order in which the displays are discovered.
 # Define your own.
 ORDER:
-  #- 'DP-2'
+  - 'eDP-1'
   #- 'monitor description'
   #- 'HDMI-1'
 
@@ -33,8 +33,12 @@ AUTO_SCALE_MIN: 1.0
 
 # Auto scale may be overridden for each display.
 SCALE:
+  # Laptop display.
   - NAME_DESC: 'eDP-1'
     SCALE: 1.2
+  # Monitor at the office.
+  - NAME_DESC: 'Lenovo Group Limited LEN T34w-20 V307NZA4'
+    SCALE: 1.0
 
 # Override the preferred mode.
 # WARNING: this may result in an unusable display. See https://github.com/alex-courtis/way-displays#known-issues-with-workarounds
