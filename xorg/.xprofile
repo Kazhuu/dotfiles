@@ -1,4 +1,0 @@
-xset r rate 150 50
-export TERMINAL=kitty
-
-setxkbmap -layout "fi" -variant "nodeadkeys"

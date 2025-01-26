@@ -2,11 +2,18 @@
 ln -s ~/dotfiles/git/.gitconfig ~/
 ln -s ~/dotfiles/git/.gitignore ~/
 
+# Locale
+ln -s ~/dotfiles/locale/locale.conf ~/.config/
+
 # Vim
 mkdir -p ~/.vim
 ln -s ~/dotfiles/vim/.vimrc ~/
 ln -s ~/dotfiles/vim/ftplugin ~/.vim
 ln -s ~/dotfiles/vim/coc-settings.json ~/.vim/
+
+# Neovim
+mkdir -p ~/.config/nvim
+ln -s ~/dotfiles/neovim/init.vim ~/.config/nvim/
 
 # Sway
 mkdir -p ~/.config/sway

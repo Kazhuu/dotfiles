@@ -5,4 +5,4 @@ interesting or useful.
 
 ## Usage
 
-Read `install.sh` to understand what it does and run it.
+Read the `framework-arch-install.sh` to understand what it does and run it.
