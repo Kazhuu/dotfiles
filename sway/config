@@ -231,8 +231,9 @@ exec dropbox
 for_window [app_id="org.speedcrunch.speedcrunch"] floating enable
 for_window [app_id="org.keepassxc.KeePassXC"] floating enable
 
-# Open applications on specific workspaces
-for_window [class="vesktop"] move to workspace 3
+# Open applications on specific workspaces.
+# Get the window details with swaymsg -t get_tree.
+for_window [app_id="vesktop"] move to workspace 3
 for_window [class="Slack"] move to workspace 3
 for_window [app_id="teams-for-linux"] move to workspace 3
 for_window [class="Spotify"] move to workspace 8
