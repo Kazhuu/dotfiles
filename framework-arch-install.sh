@@ -52,3 +52,7 @@ ln -s ~/dotfiles/cgdb/cgdbrc ~/.cgdb/
 
 # PostgreSQL
 ln -s ~/dotfiles/postgresql/.psqlrc ~/
+
+# Flameshot
+mkdir -p ~/.config/flameshot
+ln -s ~/dotfiles/flameshot/flameshot.ini ~/.config/flameshot/
