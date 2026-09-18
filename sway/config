@@ -1,4 +1,3 @@
-
 # Variables
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
@@ -226,6 +225,7 @@ exec waybar
 exec swaync
 exec --no-startup-id nm-applet
 exec dropbox
+exec blueman-applet
 
 # Have some windows to float by default.
 for_window [app_id="org.speedcrunch.speedcrunch"] floating enable
@@ -236,7 +236,7 @@ for_window [app_id="org.keepassxc.KeePassXC"] floating enable
 for_window [app_id="vesktop"] move to workspace 3
 for_window [class="Slack"] move to workspace 3
 for_window [app_id="teams-for-linux"] move to workspace 3
-for_window [class="Spotify"] move to workspace 8
-for_window [app_id="thunderbird"] move to workspace 7
+for_window [class="spotify"] move to workspace 8
+for_window [app_id="org.mozilla.Thunderbird"] move to workspace 7
 
 include /etc/sway/config.d/*
